@@ -11,12 +11,13 @@ const Stats: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
   
+  // Initialized with zeros to wait for API data
   const [leetStats, setLeetStats] = useState({
-    easy: 86,
-    medium: 142,
-    hard: 24,
-    total: 252,
-    acceptance: '64.2%',
+    easy: 0,
+    medium: 0,
+    hard: 0,
+    total: 0,
+    acceptance: '0%',
     goal: 500,
   });
 
@@ -68,7 +69,10 @@ const Stats: React.FC = () => {
 
   const radius = 36;
   const circumference = 2 * Math.PI * radius;
-  const progressOffset = circumference - (leetStats.total / leetStats.goal) * circumference;
+  // Handle case where total is 0 to avoid calculation errors
+  const progressOffset = leetStats.total === 0 
+    ? circumference 
+    : circumference - (leetStats.total / leetStats.goal) * circumference;
 
   return (
     <section id="skills" ref={sectionRef} className="py-24 bg-slate-900 border-y border-slate-800">
@@ -225,7 +229,7 @@ const Stats: React.FC = () => {
                         <Zap className="h-5 w-5 text-brand-400" />
                     </div>
                     <div>
-                        <div className="text-xl font-bold text-white">2+</div>
+                        <div className="text-xl font-bold text-white">3+</div>
                         <div className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Major Projects</div>
                     </div>
                 </div>
