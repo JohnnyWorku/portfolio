@@ -52,7 +52,7 @@ const Footer: React.FC = () => {
         
         <div className="border-t border-slate-900 pt-8 text-center md:text-left">
           <p className="text-slate-600 text-sm">
-            &copy; {new Date().getFullYear()} Yohannes Worku. Built with React & Tailwind.
+            &copy; {new Date().getFullYear()} Yohannes Worku. All rights are reserved.
           </p>
         </div>
       </div>
