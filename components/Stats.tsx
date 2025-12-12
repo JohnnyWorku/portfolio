@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Target, Zap, Code2, Trophy } from 'lucide-react';
+import { Target, Zap, Code2, ExternalLink } from 'lucide-react';
 
 const skillData = [
   { subject: 'Backend (Node/Laravel)', level: 85 },
@@ -10,6 +10,15 @@ const skillData = [
 const Stats: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
+  
+  const [leetStats, setLeetStats] = useState({
+    easy: 86,
+    medium: 142,
+    hard: 24,
+    total: 252,
+    acceptance: '64.2%',
+    goal: 500,
+  });
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -33,16 +42,29 @@ const Stats: React.FC = () => {
     };
   }, []);
 
-  // LeetCode Stats (Placeholder data - you can fetch this via API in the future)
-  // Assuming a goal of 500 problems for the visual circle
-  const leetStats = {
-    easy: 86,
-    medium: 142,
-    hard: 24,
-    total: 252,
-    acceptance: '64.2%',
-    goal: 500
-  };
+  useEffect(() => {
+    const fetchLeetCodeStats = async () => {
+      try {
+        const response = await fetch('https://leetcode-stats-api.herokuapp.com/johnnythegold41');
+        const data = await response.json();
+        
+        if (data.status === 'success') {
+          setLeetStats(prev => ({
+            ...prev,
+            easy: data.easySolved,
+            medium: data.mediumSolved,
+            hard: data.hardSolved,
+            total: data.totalSolved,
+            acceptance: `${data.acceptanceRate}%`,
+          }));
+        }
+      } catch (error) {
+        console.error("Error fetching LeetCode stats:", error);
+      }
+    };
+
+    fetchLeetCodeStats();
+  }, []);
 
   const radius = 36;
   const circumference = 2 * Math.PI * radius;
@@ -106,14 +128,20 @@ const Stats: React.FC = () => {
           <div className="space-y-6">
             
             {/* LeetCode Card */}
-            <div className="bg-slate-950/50 rounded-2xl p-8 border border-slate-800 shadow-xl relative overflow-hidden group hover:border-brand-500/30 transition-colors">
+            <a 
+                href="https://leetcode.com/u/johnnythegold41/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block bg-slate-950/50 rounded-2xl p-8 border border-slate-800 shadow-xl relative overflow-hidden group hover:border-brand-500/30 transition-all hover:translate-y-[-2px]"
+            >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-500/5 rounded-full blur-3xl -mr-10 -mt-10"></div>
                 
                 <div className="flex items-center justify-between mb-8 relative z-10">
                     <div>
-                        <h4 className="text-xl font-bold text-white flex items-center gap-2">
+                        <h4 className="text-xl font-bold text-white flex items-center gap-2 group-hover:text-yellow-400 transition-colors">
                             <Code2 className="h-6 w-6 text-yellow-500" />
                             LeetCode
+                            <ExternalLink className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity text-slate-400" />
                         </h4>
                         <p className="text-slate-400 text-sm mt-1">Problem Solving Journey</p>
                     </div>
@@ -154,7 +182,7 @@ const Stats: React.FC = () => {
                              <span className="text-sm font-medium text-emerald-400">Easy</span>
                              <div className="flex items-center gap-3">
                                 <div className="h-1.5 w-16 bg-slate-800 rounded-full overflow-hidden">
-                                    <div className="h-full bg-emerald-500" style={{ width: `${(leetStats.easy / leetStats.total) * 100}%`}}></div>
+                                    <div className="h-full bg-emerald-500" style={{ width: `${leetStats.total > 0 ? (leetStats.easy / leetStats.total) * 100 : 0}%`}}></div>
                                 </div>
                                 <span className="font-bold text-white w-8 text-right">{leetStats.easy}</span>
                              </div>
@@ -163,7 +191,7 @@ const Stats: React.FC = () => {
                              <span className="text-sm font-medium text-amber-400">Medium</span>
                              <div className="flex items-center gap-3">
                                 <div className="h-1.5 w-16 bg-slate-800 rounded-full overflow-hidden">
-                                    <div className="h-full bg-amber-400" style={{ width: `${(leetStats.medium / leetStats.total) * 100}%`}}></div>
+                                    <div className="h-full bg-amber-400" style={{ width: `${leetStats.total > 0 ? (leetStats.medium / leetStats.total) * 100 : 0}%`}}></div>
                                 </div>
                                 <span className="font-bold text-white w-8 text-right">{leetStats.medium}</span>
                              </div>
@@ -172,14 +200,14 @@ const Stats: React.FC = () => {
                              <span className="text-sm font-medium text-rose-500">Hard</span>
                              <div className="flex items-center gap-3">
                                 <div className="h-1.5 w-16 bg-slate-800 rounded-full overflow-hidden">
-                                    <div className="h-full bg-rose-500" style={{ width: `${(leetStats.hard / leetStats.total) * 100}%`}}></div>
+                                    <div className="h-full bg-rose-500" style={{ width: `${leetStats.total > 0 ? (leetStats.hard / leetStats.total) * 100 : 0}%`}}></div>
                                 </div>
                                 <span className="font-bold text-white w-8 text-right">{leetStats.hard}</span>
                              </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </a>
 
             {/* Additional Info Cards */}
              <div className="grid grid-cols-2 gap-4">
@@ -197,7 +225,7 @@ const Stats: React.FC = () => {
                         <Zap className="h-5 w-5 text-brand-400" />
                     </div>
                     <div>
-                        <div className="text-xl font-bold text-white">2+</div>
+                        <div className="text-xl font-bold text-white">3+</div>
                         <div className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Major Projects</div>
                     </div>
                 </div>
