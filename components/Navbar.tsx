@@ -47,7 +47,7 @@ const Navbar: React.FC = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0 flex items-center cursor-pointer" onClick={handleLogoClick}>
             <Code2 className="h-8 w-8 text-brand-500" />
-            <span className="ml-2 text-xl font-bold text-white tracking-tighter">YOHANNES.DEV</span>
+            <span className="ml-2 text-xl font-bold text-white tracking-tighter">YOHANNES Worku</span>
           </div>
           
           <div className="hidden md:block">
