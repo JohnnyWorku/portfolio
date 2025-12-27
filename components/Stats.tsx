@@ -229,7 +229,7 @@ const Stats: React.FC = () => {
                         <Zap className="h-5 w-5 text-brand-400" />
                     </div>
                     <div>
-                        <div className="text-xl font-bold text-white">2+</div>
+                        <div className="text-xl font-bold text-white">3+</div>
                         <div className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Major Projects</div>
                     </div>
                 </div>

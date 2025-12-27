@@ -5,21 +5,21 @@ import { Project } from '../types';
 const projects: Project[] = [
   {
     id: '1',
-    title: 'Random Chat App - Live Flow',
+    title: 'Random Chat App',
     category: 'Real-time Communication',
     description: 'A dynamic web application facilitating random user connections. Built to ensure seamless real-time messaging and user interaction.',
     image: 'https://images.unsplash.com/photo-1611606063065-ee7946f0787a?q=80&w=1000&auto=format&fit=crop',
     technologies: ['Laravel', 'React', 'WebSockets'],
-    link: 'https://github.com/Hybrid-team-2/liveflow-backend'
+    link: 'https://github.com/JohnnyWorku'
   },
   {
     id: '2',
     title: 'QR Digital Food Ordering',
     category: 'Web Application',
-    description: 'A contactless dining solution allowing customers to order via QR codes. Features a responsive frontend and a robust backend for order management. It was created in the learning process of one of my university courses.',
+    description: 'A contactless dining solution allowing customers to order via QR codes. Features a responsive frontend and a robust backend for order management.',
     image: 'https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?q=80&w=1000&auto=format&fit=crop',
     technologies: ['React.js', 'Node.js', 'HTML/CSS', 'JavaScript'],
-    link: 'https://github.com/JohnnyWorku/QR_digital_food_ordering'
+    link: 'https://github.com/JohnnyWorku'
   }
 ];
 

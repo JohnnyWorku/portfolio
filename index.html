@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Yohannes Worku | Software Engineering Student</title>
+    
+    <!-- Link to the CSS file to resolve build warnings -->
+        
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script>
@@ -20,7 +23,7 @@
                 200: '#ddd6fe',
                 300: '#c4b5fd',
                 400: '#a78bfa',
-                500: '#8b5cf6', // Violet
+                500: '#8b5cf6',
                 600: '#7c3aed',
                 700: '#6d28d9',
                 800: '#5b21b6',
@@ -31,30 +34,7 @@
         }
       }
     </script>
-    <style>
-      html {
-        scroll-behavior: smooth;
-        scroll-padding-top: 5rem; /* Offset for fixed navbar */
-      }
-      body {
-        background-color: #020617; /* Slate 950 */
-        color: #f8fafc; /* Slate 50 */
-      }
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #0f172a;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #334155;
-        border-radius: 4px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #475569;
-      }
-    </style>
-  <script type="importmap">
+    <script type="importmap">
 {
   "imports": {
     "lucide-react": "https://esm.sh/lucide-react@^0.560.0",
@@ -70,6 +50,7 @@
 </head>
   <body>
     <div id="root"></div>
-  <script type="module" src="/index.tsx"></script>
-</body>
+    <!-- Explicit entry point for local Vite builds -->
+    <script type="module" src="/index.tsx"></script>
+  </body>
 </html>

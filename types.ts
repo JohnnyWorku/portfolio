@@ -18,8 +18,15 @@ export interface SkillMetric {
 
 export interface Service {
   title: string;
-  price?: string;
   description: string;
   features: string[];
-  recommended?: boolean;
+}
+
+export interface Certification {
+  id: string;
+  title: string;
+  issuer: string;
+  date: string;
+  icon: 'award' | 'badge' | 'certificate';
+  link?: string;
 }

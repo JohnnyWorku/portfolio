@@ -4,7 +4,8 @@ import Hero from './components/Hero';
 import Features from './components/Features';
 import Experience from './components/Experience';
 import Stats from './components/Stats';
-import Pricing from './components/Pricing';
+import Expertise from './components/Expertise';
+import Certifications from './components/Certifications';
 import Footer from './components/Footer';
 import BackgroundViz from './components/BackgroundViz';
 
@@ -19,7 +20,8 @@ function App() {
           <Features />
           <Experience />
           <Stats />
-          <Pricing />
+          <Expertise />
+          <Certifications />
         </main>
         <Footer />
       </div>

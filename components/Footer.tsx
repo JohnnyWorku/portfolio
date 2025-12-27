@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
           <div>
             <div className="flex items-center text-white mb-6">
               <Code2 className="h-6 w-6 text-brand-500" />
-              <span className="ml-2 text-xl font-bold tracking-tight">YOHANNES WORKU</span>
+              <span className="ml-2 text-xl font-bold tracking-tight">YOHANNES.DEV</span>
             </div>
             <p className="text-slate-400 text-lg max-w-md mb-8">
               A dedicated Software Engineering student building accessible, pixel-perfect, and performant web experiences. Always open to internships and collaborative projects.
@@ -52,7 +52,7 @@ const Footer: React.FC = () => {
         
         <div className="border-t border-slate-900 pt-8 text-center md:text-left">
           <p className="text-slate-600 text-sm">
-            &copy; {new Date().getFullYear()} Yohannes Worku. All rights are reserved.
+            &copy; {new Date().getFullYear()} Yohannes Worku. Built with React & Tailwind.
           </p>
         </div>
       </div>

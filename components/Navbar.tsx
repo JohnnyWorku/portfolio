@@ -18,6 +18,7 @@ const Navbar: React.FC = () => {
     { name: 'Experience', href: '#experience' },
     { name: 'Skills', href: '#skills' },
     { name: 'Expertise', href: '#expertise' },
+    { name: 'Certs', href: '#certs' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -25,7 +26,7 @@ const Navbar: React.FC = () => {
     e.preventDefault();
     const element = document.querySelector(targetId);
     if (element) {
-      const offset = 80; // Height of navbar (approx 64px) + padding
+      const offset = 80;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - offset;
 
@@ -47,22 +48,22 @@ const Navbar: React.FC = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0 flex items-center cursor-pointer" onClick={handleLogoClick}>
             <Code2 className="h-8 w-8 text-brand-500" />
-            <span className="ml-2 text-xl font-bold text-white tracking-tighter">YOHANNES WORKU</span>
+            <span className="ml-2 text-xl font-bold text-white tracking-tighter">YOHANNES.DEV</span>
           </div>
           
           <div className="hidden md:block">
-            <div className="ml-10 flex items-center space-x-8">
+            <div className="ml-10 flex items-center space-x-6">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className="text-slate-400 hover:text-brand-400 px-3 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer"
+                  className="text-slate-400 hover:text-brand-400 px-2 py-1 rounded-md text-sm font-medium transition-colors cursor-pointer"
                 >
                   {link.name}
                 </a>
               ))}
-              <div className="h-6 w-px bg-slate-800 mx-4"></div>
+              <div className="h-6 w-px bg-slate-800 mx-2"></div>
               <div className="flex space-x-4">
                  <a href="https://github.com/JohnnyWorku" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white"><Github className="h-5 w-5"/></a>
               </div>
@@ -80,7 +81,6 @@ const Navbar: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile menu */}
       {isOpen && (
         <div className="md:hidden bg-slate-900 border-b border-slate-800">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
