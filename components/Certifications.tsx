@@ -35,7 +35,7 @@ const Certifications: React.FC = () => {
                   {cert.icon === 'certificate' && <ShieldCheck className="h-6 w-6 text-brand-400" />}
                 </div>
                 {cert.link && (
-                  <a href={cert.link} className="text-slate-500 hover:text-white transition-colors">
+                  <a href={cert.link} className="text-slate-500 hover:text-white transition-colors" target='blank'>
                     <ExternalLink className="h-5 w-5" />
                   </a>
                 )}
