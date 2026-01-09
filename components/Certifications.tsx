@@ -9,7 +9,7 @@ const certs: Certification[] = [
     issuer: 'Kuraz Technologies',
     date: '2024',
     icon: 'award',
-    link: 'https://drive.google.com/drive/my-drive?dmr=1&ec=wgc-drive-globalnav-goto'
+    link: 'https://drive.google.com/file/d/1gUlupW0N8OK_5RjWUSwf0liFFRn-lDEZ/view?usp=sharing'
   },
 ];
 
