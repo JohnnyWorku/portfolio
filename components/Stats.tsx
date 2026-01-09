@@ -5,6 +5,7 @@ const skillData = [
   { subject: 'Backend (Node/Laravel)', level: 85 },
   { subject: 'Frontend (React/JS)', level: 80 },
   { subject: 'Python & AI', level: 75 },
+  { subjuct: 'Data Structures and Algorithms', level: 70}
 ];
 
 const Stats: React.FC = () => {
