@@ -11,6 +11,13 @@ const certs: Certification[] = [
     icon: 'award',
     link: 'https://drive.google.com/file/d/1gUlupW0N8OK_5RjWUSwf0liFFRn-lDEZ/view?usp=sharing'
   },
+  {
+    id: '2',
+    title: 'Data Structures and Algorithms',
+    issuer: 'Africa to Silicon Valley (A2SV)',
+    date: '2024',
+    icon: 'award',
+  },
 ];
 
 const Certifications: React.FC = () => {
@@ -35,7 +42,7 @@ const Certifications: React.FC = () => {
                   {cert.icon === 'certificate' && <ShieldCheck className="h-6 w-6 text-brand-400" />}
                 </div>
                 {cert.link && (
-                  <a href={cert.link} className="text-slate-500 hover:text-white transition-colors">
+                  <a href={cert.link} className="text-slate-500 hover:text-white transition-colors" target='blank'>
                     <ExternalLink className="h-5 w-5" />
                   </a>
                 )}
