@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { Target, Zap, Code2, ExternalLink } from 'lucide-react';
 
 const skillData = [
-  { subject: 'Backend (Node/Laravel)', level: 85 },
+  { subject: 'Backend (Node/Laravel/FastApi)', level: 85 },
   { subject: 'Frontend (React/JS)', level: 80 },
   { subject: 'Python & AI', level: 75 },
   { subject: 'Data Structures and Algorithms (DSA)', level: 70},
