@@ -65,7 +65,10 @@ const Navbar: React.FC = () => {
               ))}
               <div className="h-6 w-px bg-slate-800 mx-2"></div>
               <div className="flex space-x-4">
-                 <a href="https://github.com/JohnnyWorku" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white"><Github className="h-5 w-5"/></a>
+                <a href="https://github.com/JohnnyWorku" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white"><Github className="h-5 w-5"/></a>
+              </div>
+              <div className="flex space-x-4">
+                <a href="https://drive.google.com/file/d/1q604zPjG-NxMcPf4wfmT5L0v-n4HbCC2/view?usp=sharing" target="blank" className="text-slate-400 hover:text-white">Resume</a>
               </div>
             </div>
           </div>
