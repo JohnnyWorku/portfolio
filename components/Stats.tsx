@@ -46,32 +46,24 @@ const Stats: React.FC = () => {
 
   useEffect(() => {
     const fetchLeetCodeStats = async () => {
-      try {
-        const response = await fetch(
-          "https://leetcode-stats-api.herokuapp.com/johnnythegold41"
-        );
+        try {
+            const response = await fetch("/api/leetcode");
 
-        console.log("HTTP:", response.status);
+            if (!response.ok)
+                throw new Error("Failed to fetch LeetCode stats");
 
-        const data = await response.json();
+            const data = await response.json();
 
-        console.log(data);
-
-        if (data.status === "success") {
-          setLeetStats({
-            easy: data.easySolved,
-            medium: data.mediumSolved,
-            hard: data.hardSolved,
-            total: data.totalSolved,
-            acceptance: `${data.acceptanceRate}%`,
-            goal: 500,
-          });
-        } else {
-          console.log("API Error:", data);
+            setLeetStats(prev => ({
+                ...prev,
+                easy: data.easy,
+                medium: data.medium,
+                hard: data.hard,
+                total: data.total,
+            }));
+        } catch (err) {
+            console.error(err);
         }
-      } catch (err) {
-        console.error(err);
-      }
     };
 
     fetchLeetCodeStats();
