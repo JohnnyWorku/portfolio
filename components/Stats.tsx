@@ -18,7 +18,7 @@ const Stats: React.FC = () => {
     medium: 0,
     hard: 0,
     total: 0,
-    acceptance: '0%',
+    acceptance: '--',
     goal: 500,
   });
 
